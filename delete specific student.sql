@@ -3,3 +3,5 @@
 delete from student
  where id = 191; 
 
+ select * 
+   from student;

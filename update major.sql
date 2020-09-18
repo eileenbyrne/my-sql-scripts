@@ -6,4 +6,4 @@ update student set
  
  select * 
    from student
-   where id = 110;
+   
