@@ -10,3 +10,4 @@ Union
  select lastname, 'C' as 'ABC'
  from student
  where SAT <= 1000
+ 
