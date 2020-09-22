@@ -115,7 +115,8 @@ Insert Request
 ProductID int not null,
   foreign key (ProductID)
    references Product(ID),
-Quantity int not null default 1
+Quantity int not null default 1,
+Constraint req_pdt unique (RequestID, ProductID) -- this says you can't put the same product on the same request more than once
 );
 
 Insert LineItem
@@ -128,3 +129,9 @@ Insert LineItem
   ;
   
   select * from LineItem;
+  
+  -- this creates a user who has certain rights to the database
+  
+  Drop User if exists prs_user@localhost;
+  Create User prs_user@localhost Identified By 'sesame';
+  Grant Select, Insert, Delete, Update on prs.* to prs_user@localhost;
