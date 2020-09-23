@@ -9,15 +9,15 @@ Create database PRS; -- need to ensure you are in the right Db before you create
 Use PRS;
 
 Create table User (
- ID int Primary Key auto_increment,
- UserName varchar(20) not null unique,
- Password varchar(10) not null,
- FirstName varchar(20) not null,
- LastName varchar(20),
- PhoneNumber varchar(12),
- Email varchar(75),
- IsReviewer bit default 0,
- IsAdmin bit default 0
+ ID 			int 		Primary Key auto_increment,
+ UserName 		varchar(20)	not null unique,
+ Password 		varchar(10)	not null,
+ FirstName 		varchar(20)	not null,
+ LastName 		varchar(20),
+ PhoneNumber 	varchar(12),
+ Email 			varchar(75),
+ IsReviewer 	bit 		default 0,
+ IsAdmin 		bit 		default 0
  );
  
  -- insert test data to table
@@ -134,4 +134,4 @@ Insert LineItem
   
   Drop User if exists prs_user@localhost;
   Create User prs_user@localhost Identified By 'sesame';
-  Grant Select, Insert, Delete, Update on prs.* to prs_user@localhost;
+  Grant Select, Insert, Delete, Update on prs.* to prs_user@localhost; -- prs.* note: the star means every table
